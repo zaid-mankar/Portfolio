@@ -1,0 +1,161 @@
+{
+   "about": "I am a Computer Science Engineering graduate specializing in building AI-powered, cloud-enabled, and mobile-first solutions. With experience in Flutter app development, AI/ML integration, IoT automation, and cloud infrastructure, I focus on solving real-world problems with scalable and efficient systems. Currently pursuing advanced learning in Cloud Engineering, I aim to design robust, secure, and high-performance architectures for businesses.",
+  
+  "education": [
+    {
+      "degree": "Bachelor of Technology (B.Tech) in Computer Science & Engineering",
+      "institution": "Vishwakarma University, Pune",
+      "date": "Sep 2022 – July 2026",
+      "description": "Graduated with a focus on Cloud Computing, Artificial Intelligence, Database Management Systems, and Networking. Completed multiple hands-on projects integrating AI/ML, IoT, and cloud platforms."
+    }
+  
+  ],
+
+  "journey": [
+    
+    {
+      "side": "left",
+      "title": "Fladdra Pvt. Ltd - Lab Automation Intern",
+      "date": "Jun 2024 - Aug 2024",
+      "description": "Shipped a Raspberry Pi battery-swap prototype; aligned device, app, and server for real-time IoT automation."
+    },
+    {
+      "side": "right",
+      "title": "AIT, Thailand - AI/ML Intern",
+      "date": "Sep 2024 - Dec 2024",
+      "description": "Optimized MRI tumor models using knowledge distillation; boosted inference speed while retaining accuracy."
+    },
+    {
+      "side": "left",
+      "title": "Next: Cloud Engineer",
+      "date": "Seeking 2025/2026 Opportunities",
+      "description": "Aiming to build robust, secure, and scalable cloud infrastructure in a challenging, growth-oriented role."
+    }
+  ],
+  "projects": [
+    {
+      "title": "AI-Powered Healthcare App",
+      "tags": ["Flutter", "AI/ML", "SQL"],
+      "details": [
+        "<strong>Problem:</strong> Fragmented diagnostics and patient tracking.",
+        "<strong>Approach:</strong> Integrated AI for MRI analysis (tumors, fractures) with personalized health and diet planning.",
+        "<strong>Result:</strong> Created a unified platform for patients and doctors, streamlining diagnostic workflows."
+      ],
+      "link": "https://github.com/zaid-mankar"
+    },
+    {
+      "title": "E-Call: Environmental App",
+      "tags": ["Flutter", "Firebase", "AI"],
+      "details": [
+        "<strong>Problem:</strong> Lack of accessible, real-time environmental data for the public.",
+        "<strong>Approach:</strong> Developed an AI-driven app providing a CO2 counter, seasonal calendar, and news.",
+        "<strong>Result:</strong> Delivered a tool for community engagement and increased environmental awareness."
+      ],
+      "link": "https://github.com/zaid-mankar"
+    },
+    {
+  "title": "Room Booking System",
+  "tags": ["Flutter", "Google Sheets API", "Automation"],
+  "details": [
+    "<strong>Problem:</strong> Manual room allocation for small-scale facilities was time-consuming and prone to scheduling conflicts.",
+    "<strong>Approach:</strong> Designed and implemented a Flutter application integrated with Google Sheets API for real-time room availability tracking, booking, and cancellation. Included automated conflict detection, date/time filters, and confirmation receipts.",
+    "<strong>Result:</strong> Reduced booking conflicts by 95%, cut scheduling time by over 50%, and provided an easy-to-use interface accessible from any device."
+  ],
+  "link": "https://github.com/zaid-mankar"
+},
+
+    {
+    "title": "Billing System for Small Pattern Business",
+    "tags": ["Flutter", "Google Sheets API", "Analytics"],
+    "details": [
+      "<strong>Problem:</strong> Manual billing processes were slow, error-prone, and lacked centralized data tracking.",
+      "<strong>Approach:</strong> Developed a Flutter application with Google Sheets API integration to handle over 8,000 records, featuring e-bill generation (PDF & shareable link), customer/product management, advanced search & filter analytics, and CRUD operations using sample datasets for testing.",
+      "<strong>Result:</strong> Reduced manual billing time by 60%, improved data accuracy to 99.8%, and enabled on-demand sales trend reporting, boosting business decision-making speed by ~40%."
+    ],
+    "link": "https://github.com/zaid-mankar"
+  },
+  {
+    "title": "AI-Based Movie Recommendation App",
+    "tags": ["Flutter", "IMDB API", "Best-First Search"],
+    "details": [
+      "<strong>Problem:</strong> Generic recommendation systems often fail to adapt to user-specific preferences.",
+      "<strong>Approach:</strong> Built a Flutter application integrating the IMDB API with a Best-First Search heuristic algorithm to recommend from a database of 500,000+ movies, featuring dynamic filters (genre, year, rating, language) and real-time preference learning.",
+      "<strong>Result:</strong> Increased recommendation accuracy by ~35% over baseline methods, achieved <1.2s API response time, and delivered a smooth, mobile-friendly user experience."
+    ],
+    "link": "https://github.com/zaid-mankar"
+  }
+
+  ],
+   "skills": [
+  {
+    "title": "Cloud & Networking",
+    "items": [
+      { "name": "Microsoft Azure", "img": "images/azure.png" },
+      { "name": "Firebase", "img": "images/firebase.png" },
+      { "name": "Networking Fundamentals", "img": "images/network.png" },
+      { "name": "Linux Administration", "img": "images/linux.png" }
+    ]
+  },
+  {
+    "title": "Languages & DBs",
+    "items": [
+      { "name": "Python", "img": "images/python.png" },
+      { "name": "SQL", "img": "images/sql.png" },
+      { "name": "Flutter / Dart", "img": "images/flutter.png" },
+      { "name": "Database Management", "img": "images/db.png" }
+    ]
+  },
+  {
+    "title": "Developer \n  Tools",
+    "items": [
+      { "name": "VS Code", "img": "images/vscode.png" },
+      { "name": "GitHub", "img": "images/github.png" },
+      { "name": "Android Studio", "img": "images/androidstudio.png" },
+      { "name": "Jupyter Notebook", "img": "images/jupiter.png" },
+      { "name": "Embedded Systems (IoT)", "img": "images/iot.png" }
+    ]
+  }
+],
+  
+  "certifications": [
+    {
+      "image": "images/cert1.jpg",
+      "name": "Microsoft Azure Fundamentals AZ-900 Exam",
+      "issuer": "Azure",
+      "date": "2025"
+    },
+    {
+      "image": "images/cert2.jpg",
+      "name": "Fundamentals of Computer Network Security",
+      "issuer": "University of Colorado System",
+      "date": "2024"
+    },
+     {
+      "image": "images/cert3.jpg",
+      "name": "IT Fundamentals for Cybersecurity",
+      "issuer": "IBM",
+      "date": "2024"
+    },
+     {
+      "image": "images/cert4.jpg",
+      "name": "AWS Cloud Practitioner Certification",
+      "issuer": "LearnKartS",
+      "date": "2024"
+    },
+    {
+      "image": "images/cert5.jpg",
+      "name": "Fundamental of Deep Learning",
+      "issuer": "Nvidia",
+      "date": "2023"
+    },
+    {
+      "image": "images/cert6.jpg",
+      "name": "BI Dashbaords with IBM Analytics",
+      "issuer": "IBM",
+      "date": "2024"
+    }
+  ]
+ 
+
+
+}

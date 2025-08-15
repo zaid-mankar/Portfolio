@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaid Mankar | Cloud & AI Engineer</title>
+
+    <meta name="author" content="Zaid Mankar">
+    <meta name="description" content="Portfolio of Zaid Mankar, a student and engineer specializing in cloud technologies, AI/ML, and IoT.">
+    <meta property="og:title" content="Zaid Mankar | Portfolio">
+    <meta property="og:description" content="Building reliable cloud systems with a brain for AI. Explore my projects and journey.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5c7b5f9d7a.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="network-canvas"></canvas>
+
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="nav-logo"><span class="nav-z">Z</span><span class="nav-m">M</span></a>
+                <button class="hamburger" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#journey">Journey</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero">
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <h1>Hi I'm Zaid Mankar</h1>
+                    <p class="subtitle">From IoT prototypes to AI diagnostics, I architect systems that scale and stay sane. Currently seeking roles where reliability meets intelligent infrastructure.</p>
+                   <div class="hero-buttons">
+    <a href="assets/ZaidMankar_Resume.pdf" download="ZaidMankar_Resume.pdf" class="btn btn-secondary">
+        Download Resume
+    </a>
+    
+    <a href="https://github.com/zaid-mankar" target="_blank" aria-label="GitHub" class="icon-button">
+        <img src="images/githubb.png" alt="GitHub" class="social-icon">
+    </a>
+    
+    <a href="https://linkedin.com/in/zaid-mankar" target="_blank" aria-label="LinkedIn" class="icon-button">
+        <img src="images/linkedinn.png" alt="LinkedIn" class="social-icon">
+    </a>
+     </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <div class="container glass-section">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="images/profile.png" alt="Zaid Mankar" class="profile-img">
+                    </div>
+                    <div class="about-details">
+                        <p class="about-text" id="about-text"></p>
+                        <div class="education-box" id="education-box"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- JOURNEY SECTION -->
+        <section id="journey">
+            <div class="container glass-section">
+                <h2 class="section-title">My Journey</h2>
+                <div class="timeline" id="journey-timeline"></div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects">
+            <div class="container glass-section">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid" id="projects-grid"></div>
+            </div>
+        </section>
+
+        <!-- TOOLKIT SECTION -->
+        <section id="toolkit-section">
+            <div class="toolkit-container glass-section">
+                <h2 class="section-title">My Toolkit</h2>
+                <div id="toolkit-grid" class="toolkit-grid"></div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS SECTION -->
+        <section id="certifications-section">
+            <div class="certifications-container glass-section">
+                <h2 class="cert-title">Certifications</h2>
+                <div class="cert-carousel">
+                    <button class="cert-arrow left" type="button" aria-label="Scroll left">‹</button>
+                    <div class="certs-viewport">
+                        <div class="certs-track" id="certsTrack"></div>
+                    </div>
+                    <button class="cert-arrow right" type="button" aria-label="Scroll right">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <div class="container glass-section">
+                <div class="contact-grid">
+                    <div class="contact-image fade-in">
+                        <img src="images/contact.png" alt="Get in Touch Illustration" class="contact-img">
+                    </div>
+                    <div class="contact-form fade-in">
+                        <h2 class="section-title">Get In Touch</h2>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-portfolio">
+                    <h3>Zaid's Portfolio</h3>
+                    <p>Thank you for visiting my personal portfolio website. Connect with me over socials.</p>
+                    <p>Keep Rising . Connect with me over live chat!</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#journey">Journey</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#toolkit-section">Skills</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+    <h3>Contact Info</h3>
+    <p>
+        <span class="icon-box">
+            <img src="images/email.png" alt="Email" class="footer-icon">
+        </span>
+        zaidsmankar@gmail.com
+    </p>
+    <p>
+        <span class="icon-box">
+            <img src="images/location.png" alt="Location" class="footer-icon">
+        </span>
+        Pune, India - 411005
+    </p>
+    <div class="footer-socials">
+        <a href="https://linkedin.com/in/zaid-mankar" target="_blank" class="icon-box">
+            <img src="images/linkedinn.png" alt="LinkedIn" class="footer-social-icon">
+        </a>
+        <a href="https://github.com/zaid-mankar" target="_blank" class="icon-box">
+            <img src="images/github.png" alt="GitHub" class="footer-social-icon">
+        </a>
+        <a href="mailto:zaidsmankar@gmail.com" class="icon-box">
+            <img src="images/email.png" alt="Email" class="footer-social-icon">
+        </a>
+    </div>
+</div>
+
+</div>
+
+            </div>
+            <p class="footer-bottom">Designed By Zaid Mankar</p>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="journey-modal" class="modal">
+        <div class="modal-content glass-section">
+            <span class="close">&times;</span>
+            <h3 id="modal-title"></h3>
+            <div id="modal-date"></div>
+            <div id="modal-company"></div>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
