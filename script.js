@@ -328,34 +328,6 @@ function animate() {
     });
     animationFrameId = requestAnimationFrame(animate);
 }
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const formData = {
-        name: document.getElementById("name").value.trim(),
-        email: document.getElementById("email").value.trim(),
-        phone: document.getElementById("phone").value.trim(),
-        message: document.getElementById("message").value.trim()
-    };
-
-    fetch("https://script.google.com/macros/s/AKfycbyXOPsh8iSZb4a2p71MmHkgJkEf9wZ9QUNk7CB3bmQ0XGEY2eOGratg8cv0EzVnMPY/exec", {
-        method: "POST",
-        body: JSON.stringify(formData)
-    })
-    .then(res => res.json())
-    .then(data => {
-        if (data.result === "success") {
-            alert("Message sent! Will be back to you .");
-            document.getElementById("contactForm").reset();
-        } else {
-            alert("Error sending message.");
-        }
-    })
-    .catch(err => {
-        console.error(err);
-        alert("Error connecting to Google Sheets.");
-    });
-});
 
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) {

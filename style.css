@@ -132,6 +132,24 @@ body {
         max-width: 200px;
     }
 }
+/* Google Forms  */
+.form-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 120%; /* adjust height ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 /* Timeline container */
 #journey-timeline {
@@ -139,22 +157,35 @@ body {
   display: flex;
   align-items: center;
   gap: 2rem;                  /* big space between items */
-  padding: 5rem ;            /* more vertical breathing room */
+  padding: 5rem;             /* more vertical breathing room */
   min-height: 600px;          /* tall enough for big cards */
   overflow-x: auto;
   scroll-behavior: smooth;
 }
 
-/* Horizontal main line */
+/* Horizontal main line with infinite rightward gradient flow */
 #journey-timeline::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 0;
   width: 100%;
-  height: 3px;
-  background: #ccc;
+  height: 6px; /* Thicker for prominence */
+  background: linear-gradient(to right, var(--navy-primary), var(--amber-accent), var(--navy-dark), var(--navy-primary)); /* Theme-matched gradient */
+  background-size: 200% 100%; /* Double size for smooth infinite flow */
+  box-shadow: 0 0 12px rgba(30, 64, 175, 0.5); /* Navy glow */
   z-index: 1;
+  animation: gradientFlow 6s linear infinite; /* Infinite rightward flow */
+}
+
+/* Infinite rightward gradient flow animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%; /* Moves gradient to the right infinitely */
+  }
 }
 
 /* Timeline item wrapper */
@@ -164,30 +195,66 @@ body {
   z-index: 2;
 }
 
-/* Dot on the line */
+/* Dot on the line with sparkle and bounce */
 .timeline-item::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 22px;                /* larger dot */
-  height: 22px;
-  background: #007bff;
+  width: 26px; /* Larger for emphasis */
+  height: 26px;
+  background: radial-gradient(circle, var(--amber-accent), var(--navy-dark)); /* Theme-matched gradient */
   border-radius: 50%;
-  border: 3px solid white;
+  border: 4px solid var(--text-light); /* Matches text-light for contrast */
+  box-shadow: 0 0 15px rgba(217, 119, 6, 0.7), 0 0 25px rgba(217, 119, 6, 0.4); /* Amber glow */
   z-index: 3;
+  animation: bounce var(--duration-med) var(--easing-spring) infinite, sparkle 2s ease-in-out infinite; /* Theme-matched timing */
+  transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease; /* Smooth hover */
+}
+
+/* Hover effect for the dot */
+.timeline-item:hover::before {
+  transform: translate(-50%, -50%) scale(1.3); /* Bigger scale-up on hover */
+  box-shadow: 0 0 20px rgba(217, 119, 6, 0.9), 0 0 30px rgba(217, 119, 6, 0.6); /* Brighter amber glow */
+}
+
+/* Bounce animation for the dot */
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1); /* Subtle bounce */
+  }
+}
+
+/* Sparkle animation for the dot */
+@keyframes sparkle {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(217, 119, 6, 0.7), 0 0 25px rgba(217, 119, 6, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(217, 119, 6, 1), 0 0 40px rgba(217, 119, 6, 0.6); /* Sparkle peak */
+  }
+}
+
+/* Change timeline dates color */
+#journey-timeline .timeline-item .date {
+    color: var(--amber-accent); /* Matches dot gradient */
+    font-weight: bold; /* optional */
 }
 
 /* Timeline card — now bigger */
 .timeline-card {
-  background: white;
+  background: var(--glass-white); /* Theme-matched glass effect */
   padding: 2rem;              /* more inner padding */
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   text-align: center;
   width: 300px;               /* more width */
   min-height: 200px;          /* more height */
+  border: 1px solid var(--glass-border); /* Theme-matched border */
 }
 
 /* Above the line */
@@ -206,7 +273,6 @@ body {
   transform: translateX(-50%);
 }
 
-
 /* Modal for Journey Details */
 .modal {
     display: none;
@@ -217,28 +283,27 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 .modal-content {
-    background: rgba(255,255,255,0.9);
+    background: var(--glass-white); /* Theme-matched glass effect */
     backdrop-filter: blur(10px);
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid var(--glass-border); /* Theme-matched border */
     width: 80%;
     max-width: 600px;
 }
 .close {
-    color: #aaa;
+    color: var(--mist-gray); /* Theme-matched color */
     float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
 }
 .close:hover {
-    color: black;
+    color: var(--navy-dark); /* Theme-matched hover color */
 }
-
 /* Toolkit Section */
 .toolkit-container {
     max-width: 1200px;
