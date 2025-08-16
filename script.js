@@ -221,7 +221,7 @@ class Particle {
         this.size = isNode ? Math.random() * 4 + 2 : Math.random() * 2 + 1;
         this.speedX = (Math.random() * 1 - 0.5) * 0.5;
         this.speedY = (Math.random() * 1 - 0.5) * 0.5;
-        this.color = 'rgba(30, 64, 175, 0.5)';
+        this.color = 'rgba(30, 64, 175, 0.8)';
         if (isNode) {
             this.pulse = { size: this.size, speed: 0.1, growing: true };
         }
@@ -247,7 +247,7 @@ class Particle {
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
         if (this.isNode) {
-            ctx.strokeStyle = 'rgba(217, 119, 6, 0.3)';
+            ctx.strokeStyle = 'rgba(217, 119, 6, 1.5)';
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.pulse.size, 0, Math.PI * 2);
@@ -279,7 +279,7 @@ class Pulse {
 }
 
 function initCanvas() {
-    const particleCount = Math.floor(canvas.width / 17);
+    const particleCount = Math.floor(canvas.width / 5);
     particles = [];
     nodes = [];
     dataPulses = [];
@@ -294,7 +294,7 @@ function initCanvas() {
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.strokeStyle = 'rgba(30, 58, 138, 0.25)';
-    ctx.lineWidth = 0.5;
+    ctx.lineWidth = 0.9;
     for (let i = 0; i < nodes.length; i++) {
         for (let j = i; j < nodes.length; j++) {
             let dx = nodes[i].x - nodes[j].x;
@@ -312,7 +312,7 @@ function animate() {
         p.update();
         p.draw();
     });
-    if (Math.random() < 0.02 && nodes.length > 1) {
+    if (Math.random() < 0.2 && nodes.length > 1) {
         const startNode = nodes[Math.floor(Math.random() * nodes.length)];
         const endNode = nodes[Math.floor(Math.random() * nodes.length)];
         if (startNode !== endNode) {
