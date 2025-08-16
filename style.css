@@ -1164,3 +1164,121 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+@media (max-width: 768px) {
+  #journey-timeline {
+    flex-direction: column; /* Stack vertically */
+    align-items: flex-start; /* Align to left */
+    gap: 3rem; /* Vertical spacing between items */
+    padding: 2rem 1rem; /* Consistent padding */
+    min-height: auto; /* No fixed height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    position: relative; /* Ensure pseudo-element positioning */
+  }
+
+  #journey-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px; /* Fixed position for vertical line */
+    width: 6px; /* Line thickness */
+    height: 100%; /* Full height of container */
+    background: linear-gradient(
+      to bottom,
+      var(--navy-primary),
+      var(--amber-accent),
+      var(--navy-dark),
+      var(--navy-primary)
+    );
+    background-size: 100% 200%;
+    animation: gradientFlowVertical 6s linear infinite;
+  }
+
+  /* Vertical flow animation */
+  @keyframes gradientFlowVertical {
+    0% {
+      background-position: 50% 0%;
+    }
+    100% {
+      background-position: 50% 200%;
+    }
+  }
+@media (max-width: 768px) {
+  .timeline-arrow {
+    display: none; /* hide arrows on mobile */
+  }
+}
+
+  .timeline-item {
+    width: 100%; /* Full width */
+    padding-left: 3rem; /* Space for line and dot */
+    position: relative; /* For dot positioning */
+    box-sizing: border-box; /* Ensure padding doesn’t affect width */
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 20px; /* Align with vertical line */
+    top: 0; /* Align dot at top of item */
+    width: 12px; /* Dot size */
+    height: 12px; /* Dot size */
+    background: var(--amber-accent); /* Dot color, adjust as needed */
+    border-radius: 50%; /* Circular dot */
+    transform: translateX(-50%); /* Center dot on vertical line */
+    z-index: 1; /* Ensure dot is above line */
+  }
+
+  /* Cards aligned beside the line */
+  .timeline-item.top .timeline-card,
+  .timeline-item.bottom .timeline-card {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 1rem; /* Space between dot and card */
+    width: calc(100% - 3rem); /* Adjust for padding */
+    box-sizing: border-box;
+  }
+}
+
+.timeline-wrapper {
+  position: relative;
+}
+
+.timeline-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(30,41,59,0.85); /* navy dark with opacity */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+.timeline-arrow:hover {
+  background: var(--amber-accent);
+}
+
+.timeline-arrow.left {
+  left: 10px;
+}
+
+.timeline-arrow.right {
+  right: 10px;
+}
+#journey-timeline {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+#journey-timeline::-webkit-scrollbar {
+  display: none;  /* Chrome/Safari */
+}

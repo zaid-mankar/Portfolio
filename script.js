@@ -312,7 +312,7 @@ function animate() {
         p.update();
         p.draw();
     });
-    if (Math.random() < 0.2 && nodes.length > 1) {
+    if (Math.random() < 0.05 && nodes.length > 1) {
         const startNode = nodes[Math.floor(Math.random() * nodes.length)];
         const endNode = nodes[Math.floor(Math.random() * nodes.length)];
         if (startNode !== endNode) {
@@ -344,3 +344,17 @@ const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 50);
 });
+
+  const timeline = document.getElementById('journey-timeline');
+  const leftBtn = document.querySelector('.timeline-arrow.left');
+  const rightBtn = document.querySelector('.timeline-arrow.right');
+
+  const scrollAmount = 400; // how much to move per click
+
+  leftBtn.addEventListener('click', () => {
+    timeline.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  rightBtn.addEventListener('click', () => {
+    timeline.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
