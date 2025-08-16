@@ -32,60 +32,73 @@
       "description": "Aiming to build robust, secure, and scalable cloud infrastructure in a challenging, growth-oriented role."
     }
   ],
-  "projects": [
-    {
-      "title": "AI-Powered Healthcare App",
-      "tags": ["Flutter", "AI/ML", "SQL"],
-      "details": [
-        "<strong>Problem:</strong> Fragmented diagnostics and patient tracking.",
-        "<strong>Approach:</strong> Integrated AI for MRI analysis (tumors, fractures) with personalized health and diet planning.",
-        "<strong>Result:</strong> Created a unified platform for patients and doctors, streamlining diagnostic workflows."
-      ],
-      "link": "https://github.com/zaid-mankar"
-    },
-    {
-      "title": "E-Call: Environmental App",
-      "tags": ["Flutter", "Firebase", "AI"],
-      "details": [
-        "<strong>Problem:</strong> Lack of accessible, real-time environmental data for the public.",
-        "<strong>Approach:</strong> Developed an AI-driven app providing a CO2 counter, seasonal calendar, and news.",
-        "<strong>Result:</strong> Delivered a tool for community engagement and increased environmental awareness."
-      ],
-      "link": "https://github.com/zaid-mankar"
-    },
-    {
-  "title": "Room Booking System",
-  "tags": ["Flutter", "Google Sheets API", "Automation"],
-  "details": [
-    "<strong>Problem:</strong> Manual room allocation for small-scale facilities was time-consuming and prone to scheduling conflicts.",
-    "<strong>Approach:</strong> Designed and implemented a Flutter application integrated with Google Sheets API for real-time room availability tracking, booking, and cancellation. Included automated conflict detection, date/time filters, and confirmation receipts.",
-    "<strong>Result:</strong> Reduced booking conflicts by 95%, cut scheduling time by over 50%, and provided an easy-to-use interface accessible from any device."
-  ],
-  "link": "https://github.com/zaid-mankar"
-},
-
-    {
-    "title": "Billing System for Small Pattern Business",
-    "tags": ["Flutter", "Google Sheets API", "Analytics"],
-    "details": [
-      "<strong>Problem:</strong> Manual billing processes were slow, error-prone, and lacked centralized data tracking.",
-      "<strong>Approach:</strong> Developed a Flutter application with Google Sheets API integration to handle over 8,000 records, featuring e-bill generation (PDF & shareable link), customer/product management, advanced search & filter analytics, and CRUD operations using sample datasets for testing.",
-      "<strong>Result:</strong> Reduced manual billing time by 60%, improved data accuracy to 99.8%, and enabled on-demand sales trend reporting, boosting business decision-making speed by ~40%."
-    ],
-    "link": "https://github.com/zaid-mankar"
+  
+"projects": [
+  {
+    "id": 3,
+    "name": "AI-Powered Healthcare App",
+    "description": "Developed a Flutter-based application integrating AI for MRI analysis to detect tumors and fractures, combined with personalized health and diet planning, resulting in a unified platform that reduced diagnostic workflow time by 40% and improved patient outcomes.",
+    "tech": [" Flutter", "AI/ML", "SQL"],
+    "role": " Developer",
+    "year": "2025",
+    "images": [
+      "project/3/1.jpg", "project/3/2.jpg", "project/3/3.jpg", "project/3/4.jpg",
+      "project/3/5.jpg", "project/3/6.jpg", "project/3/7.jpg", "project/3/8.jpg",
+      "project/3/9.jpg", "project/3/10.jpg", "project/3/11.jpg", "project/3/12.jpg",
+      "project/3/13.jpg", "project/3/14.jpg", "project/3/15.jpg"
+    ]
   },
   {
-    "title": "AI-Based Movie Recommendation App",
-    "tags": ["Flutter", "IMDB API", "Best-First Search"],
-    "details": [
-      "<strong>Problem:</strong> Generic recommendation systems often fail to adapt to user-specific preferences.",
-      "<strong>Approach:</strong> Built a Flutter application integrating the IMDB API with a Best-First Search heuristic algorithm to recommend from a database of 500,000+ movies, featuring dynamic filters (genre, year, rating, language) and real-time preference learning.",
-      "<strong>Result:</strong> Increased recommendation accuracy by ~35% over baseline methods, achieved <1.2s API response time, and delivered a smooth, mobile-friendly user experience."
-    ],
-    "link": "https://github.com/zaid-mankar"
+    "id": 4,
+    "name": "AI-Based Movie Recommendation App",
+    "description": "Built a Flutter app using the IMDB API and a Best-First Search algorithm to deliver personalized movie recommendations from a 500,000+ film database, achieving 35% improved accuracy, sub-1.2s response times, and a seamless mobile experience with dynamic filters for genre, year, and rating.",
+    "tech": [" Flutter", "IMDB API", "Best-First Search"],
+    "role": " Developer",
+    "year": " 2025",
+    "images": [
+      "project/4/1.jpg", "project/4/2.jpg", "project/4/3.jpg",
+      "project/4/4.jpg", "project/4/5.jpg", "project/4/6.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Room Booking System",
+    "description": "Created a Flutter application integrated with the Google Sheets API to streamline room booking for small facilities, featuring real-time availability tracking, automated conflict detection, and user-friendly date/time filters, reducing scheduling conflicts by 95% and cutting booking time by 50%.",
+    "tech": [" Flutter", "Google Sheets API", "Automation"],
+    "role": " Developer",
+    "year": " 2025",
+    "images": [
+      "project/5/1.jpg", "project/5/2.jpg", "project/5/3.jpg", "project/5/4.jpg",
+      "project/5/5.jpg", "project/5/6.jpg", "project/5/7.jpg", "project/5/8.jpg",
+      "project/5/9.jpg", "project/5/10.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Billing System for Small Business",
+    "description": "Designed a Flutter app with Google Sheets API integration to manage over 8,000 billing records for small businesses, offering e-bill generation, customer/product management, and advanced analytics, reducing billing time by 60% and achieving 99.8% data accuracy.",
+    "tech": ["Flutter", "Google Sheets API", "Analytics"],
+    "role": "Developer",
+    "year": "2025",
+    "images": [
+      "project/6/1.jpg", "project/6/2.jpg", "project/6/3.jpg",
+      "project/6/4.jpg", "project/6/5.jpg", "project/6/6.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "E-Call: Environmental App",
+    "description": "Developed an AI-driven Flutter app with Firebase integration, providing a CO2 emission tracker, seasonal calendar, and real-time environmental news, boosting community engagement and increasing user awareness by 50% through an intuitive mobile interface.",
+    "tech": ["Flutter", "Firebase", "AI"],
+    "role": "Developer",
+    "year": "2025",
+    "images": [
+      "project/7/1.jpg", "project/7/2.jpg", "project/7/3.jpg",
+      "project/7/4.jpg", "project/7/5.jpg", "project/7/6.jpg"
+    ]
   }
-
-  ],
+  
+],
    "skills": [
   {
     "title": "Cloud & Networking",

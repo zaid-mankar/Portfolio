@@ -358,3 +358,101 @@ window.addEventListener('scroll', () => {
   rightBtn.addEventListener('click', () => {
     timeline.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   });
+
+ let projects = [];
+let currentProject = 0;
+let currentImg = 0;
+
+async function loadProjects() {
+  try {
+    const res = await fetch("data.json");
+    if (!res.ok) throw new Error("Failed to load data.json");
+    const data = await res.json();
+    projects = data.projects;
+
+    renderTabs();
+    renderProject(0);
+  } catch (err) {
+    console.error("Error loading projects:", err);
+  }
+}
+
+function renderTabs() {
+  const tabsContainer = document.getElementById("project-tabs");
+  tabsContainer.innerHTML = projects.map((p, i) =>
+    `<button class="project-tab ${i === 0 ? 'active' : ''}" data-index="${i}">${p.name}</button>`
+  ).join("");
+
+  // Tab click events
+  tabsContainer.querySelectorAll(".project-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      document.querySelector(".project-tab.active")?.classList.remove("active");
+      tab.classList.add("active");
+      currentProject = parseInt(tab.dataset.index);
+      renderProject(currentProject);
+    });
+  });
+}
+
+function renderProject(index) {
+  const project = projects[index];
+  const imgWrapper = document.getElementById("proj-img-wrapper");
+  const info = document.getElementById("project-info");
+
+  currentImg = 0; // reset image index
+
+  // Images
+  imgWrapper.innerHTML = project.images.map((src, i) =>
+    `<img src="${src}" alt="${project.name}" class="${i === 0 ? 'active' : ''}">`
+  ).join("");
+
+  // Info
+  info.innerHTML = `
+    <h3>${project.name}</h3>
+    <p>${project.description}</p>
+    <ul>
+      <li><strong>Tech:</strong> ${project.tech.join(", ")}</li>
+      <li><strong>Role:</strong> ${project.role}</li>
+      <li><strong>Year:</strong> ${project.year}</li>
+    </ul>
+  `;
+}
+
+// Image carousel
+function changeImage(direction) {
+  const project = projects[currentProject];
+  const images = document.querySelectorAll("#proj-img-wrapper img");
+
+  images[currentImg].classList.remove("active");
+  currentImg = (currentImg + direction + project.images.length) % project.images.length;
+  images[currentImg].classList.add("active");
+}
+
+document.querySelector(".proj-arrow.left").addEventListener("click", () => changeImage(-1));
+document.querySelector(".proj-arrow.right").addEventListener("click", () => changeImage(1));
+
+// Scrollable tabs
+const tabContainer = document.getElementById("project-tabs");
+document.querySelector(".tab-arrow.left").addEventListener("click", () => {
+  tabContainer.scrollBy({ left: -200, behavior: "smooth" });
+});
+document.querySelector(".tab-arrow.right").addEventListener("click", () => {
+  tabContainer.scrollBy({ left: 200, behavior: "smooth" });
+});
+
+// Load on start
+loadProjects();
+function renderProjectInfo(project) {
+  const infoDiv = document.getElementById("project-info");
+  infoDiv.innerHTML = `
+    <h3>${project.name}</h3>
+    <div class="project-meta">
+      <span class="role">${project.role}</span>
+      <span class="year">${project.year}</span>
+    </div>
+    <p>${project.description}</p>
+    <div class="tech-stack">
+      ${project.tech.map(t => `<span class="tech">${t}</span>`).join("")}
+    </div>
+  `;
+}
