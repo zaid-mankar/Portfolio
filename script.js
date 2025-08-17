@@ -21,6 +21,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 });
 
+function initializeTabScroll() {
+    const tabContainer = document.getElementById('project-tabs');
+    const leftArrow = document.querySelector('.project-tab-arrow.left');
+    const rightArrow = document.querySelector('.project-tab-arrow.right');
+    if (!tabContainer || !leftArrow || !rightArrow) return;
+
+    function updateTabArrows() {
+        leftArrow.disabled = tabContainer.scrollLeft <= 0;
+        rightArrow.disabled = tabContainer.scrollLeft + tabContainer.clientWidth >= tabContainer.scrollWidth - 1;
+    }
+
+    updateTabArrows();
+    leftArrow.addEventListener('click', () => tabContainer.scrollBy({ left: -200, behavior: 'smooth' }));
+    rightArrow.addEventListener('click', () => tabContainer.scrollBy({ left: 200, behavior: 'smooth' }));
+    tabContainer.addEventListener('scroll', updateTabArrows);
+    window.addEventListener('resize', updateTabArrows);
+}
 function populateAbout(aboutText, education) {
     const aboutTextElement = document.getElementById('about-text');
     const educationBox = document.getElementById('education-box');
@@ -40,14 +57,18 @@ function populateAbout(aboutText, education) {
 
 function populateJourney(journeyItems) {
     const timeline = document.getElementById('journey-timeline');
-    if (!timeline) return;
+    const modal = document.getElementById('journey-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDate = document.getElementById('modal-date');
+    const modalCompany = document.getElementById('modal-company');
+    const modalDescription = document.getElementById('modal-description');
+    const closeBtn = document.querySelector('.modal .close');
+    if (!timeline || !modal || !closeBtn) return;
 
     timeline.innerHTML = journeyItems.map((item, index) => `
         <div class="timeline-item fade-in ${index % 2 === 0 ? 'top' : 'bottom'}">
-            <div class="timeline-card">
+            <div class="timeline-card" data-title="${item.title}" data-date="${item.date}" data-company="${item.company || ''}" data-description="${item.description}">
                 <div class="card-face card-front">
-                    
-                  
                 </div>
                 <div class="card-face card-back">
                     <h3>${item.title}</h3>
@@ -59,11 +80,24 @@ function populateJourney(journeyItems) {
         </div>
     `).join('');
 
-    // Add click event listeners for flipping
     document.querySelectorAll('.timeline-card').forEach(card => {
         card.addEventListener('click', () => {
-            card.classList.toggle('flipped');
+            modalTitle.textContent = card.dataset.title;
+            modalDate.textContent = card.dataset.date;
+            modalCompany.textContent = card.dataset.company;
+            modalDescription.textContent = card.dataset.description;
+            modal.style.display = 'block';
         });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
     });
 }
 
@@ -150,11 +184,11 @@ function initializeCertifications(certifications) {
         updateArrows();
     });
 }
-
 function initializeTimelineScroll() {
     const track = document.getElementById('journey-timeline');
+    const leftBtn = document.querySelector('.timeline-arrow.left');
     const rightBtn = document.querySelector('.timeline-arrow.right');
-    if (!track || !rightBtn) return;
+    if (!track || !leftBtn || !rightBtn) return;
 
     function stepSize() {
         const card = track.querySelector('.timeline-item');
@@ -164,24 +198,25 @@ function initializeTimelineScroll() {
         return Math.round(cardWidth + gap);
     }
 
-    function updateArrow() {
+    function updateArrows() {
         const maxScroll = track.scrollWidth - track.clientWidth - 1;
+        leftBtn.disabled = track.scrollLeft <= 0;
         rightBtn.disabled = track.scrollLeft >= maxScroll;
     }
 
-    updateArrow();
+    updateArrows();
+    leftBtn.addEventListener('click', () => track.scrollBy({ left: -stepSize(), behavior: 'smooth' }));
     rightBtn.addEventListener('click', () => track.scrollBy({ left: stepSize(), behavior: 'smooth' }));
-    track.addEventListener('scroll', updateArrow);
+    track.addEventListener('scroll', updateArrows);
     window.addEventListener('resize', () => {
         const s = stepSize();
         if (s > 0) {
             const idx = Math.round(track.scrollLeft / s);
             track.scrollTo({ left: idx * s, behavior: 'auto' });
         }
-        updateArrow();
+        updateArrows();
     });
 }
-
 function initializeFaders() {
     const faders = document.querySelectorAll('.fade-in');
     const appearOptions = {
@@ -364,17 +399,18 @@ let currentProject = 0;
 let currentImg = 0;
 
 async function loadProjects() {
-  try {
-    const res = await fetch("data.json");
-    if (!res.ok) throw new Error("Failed to load data.json");
-    const data = await res.json();
-    projects = data.projects;
+    try {
+        const res = await fetch("data.json");
+        if (!res.ok) throw new Error("Failed to load data.json");
+        const data = await res.json();
+        projects = data.projects;
 
-    renderTabs();
-    renderProject(0);
-  } catch (err) {
-    console.error("Error loading projects:", err);
-  }
+        renderTabs();
+        renderProject(0);
+        initializeTabScroll(); // Add this
+    } catch (err) {
+        console.error("Error loading projects:", err);
+    }
 }
 
 function renderTabs() {
@@ -433,10 +469,10 @@ document.querySelector(".proj-arrow.right").addEventListener("click", () => chan
 
 // Scrollable tabs
 const tabContainer = document.getElementById("project-tabs");
-document.querySelector(".tab-arrow.left").addEventListener("click", () => {
+document.querySelector(".project-tab-arrow.left").addEventListener("click", () => {
   tabContainer.scrollBy({ left: -200, behavior: "smooth" });
 });
-document.querySelector(".tab-arrow.right").addEventListener("click", () => {
+document.querySelector(".project-tab-arrow.right").addEventListener("click", () => {
   tabContainer.scrollBy({ left: 200, behavior: "smooth" });
 });
 

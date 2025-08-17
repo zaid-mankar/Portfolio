@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zaid Mankar | Cloud & AI Engineer</title>
-
+     
     <meta name="author" content="Zaid Mankar">
     <meta name="description" content="Portfolio of Zaid Mankar, a student and engineer specializing in cloud technologies, AI/ML, and IoT.">
     <meta property="og:title" content="Zaid Mankar | Portfolio">
     <meta property="og:description" content="Building reliable cloud systems with a brain for AI. Explore my projects and journey.">
     <meta property="og:type" content="website">
-
+     
+    <link rel="stylesheet" href="style.css?v=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/5c7b5f9d7a.js" crossorigin="anonymous"></script>
-
+    
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -55,7 +56,7 @@
     </a>
     
     <a href="https://github.com/zaid-mankar" target="_blank" aria-label="GitHub" class="icon-button">
-        <img src="images/githubb.png" alt="GitHub" class="social-icon">
+        <img src="images/github.png" alt="GitHub" class="social-icon">
     </a>
     
     <a href="https://linkedin.com/in/zaid-mankar" target="_blank" aria-label="LinkedIn" class="icon-button">
@@ -93,8 +94,8 @@
       <button class="timeline-arrow left">‹</button>
       
       <!-- Scrollable Timeline -->
-      <div class="timeline" id="journey-timeline">
-        <!-- your timeline-item divs go here -->
+      <div id="journey-timeline">
+        <!-- timeline-item divs populated by JS -->
       </div>
       
       <button class="timeline-arrow right">›</button>
@@ -110,18 +111,18 @@
 
     <!-- Tabs with arrows -->
     <div class="project-tabs-wrapper">
-      <button class="tab-arrow left">‹</button>
+      <button class="project-tab-arrow left" aria-label="Scroll tabs left" disabled>‹</button>
       <div class="project-tabs" id="project-tabs"></div>
-      <button class="tab-arrow right">›</button>
+      <button class="project-tab-arrow right" aria-label="Scroll tabs right">›</button>
     </div>
 
     <!-- Project Display -->
     <div class="project-display">
       <!-- Left: images -->
       <div class="project-images">
-        <button class="proj-arrow left">‹</button>
+        <button class="proj-arrow left" aria-label="Previous image" disabled>‹</button>
         <div class="proj-img-wrapper" id="proj-img-wrapper"></div>
-        <button class="proj-arrow right">›</button>
+        <button class="proj-arrow right" aria-label="Next image">›</button>
       </div>
 
       <!-- Right: info -->
