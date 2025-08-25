@@ -133,8 +133,8 @@
   "certifications": [
     {
       "image": "images/cert1.jpg",
-      "name": "Microsoft Azure Fundamentals AZ-900 Exam",
-      "issuer": "Azure",
+      "name": "Microsoft Azure Fundamentals - AZ-900",
+      "issuer": "Microsoft",
       "date": "2025"
     },
     {
